@@ -6,7 +6,7 @@
     <Parameters>
         <Parameter name="LHS" type="typedef">getJoystickValue(BtnEDown)</Parameter>
         <Parameter name="operator" type="typedef">==</Parameter>
-        <Parameter name="RHS" type="short">1</Parameter>
+        <Parameter name="RHS" type="float">1</Parameter>
     </Parameters>
 </ProgrammingBlock>
 
