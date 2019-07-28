@@ -12,92 +12,24 @@
 
 <ProgrammingBlock type="functionCall" function="armControl">
     <Parameters>
-        <Parameter name="armMotorPort" type="base typedef" default="motor10" typeDef="tMotor">armMotor</Parameter>
-        <Parameter name="upButton" type="base typedef" default="BtnLUp" typeDef="TVexJoysticks">BtnLUp</Parameter>
-        <Parameter name="downButton" type="base typedef" default="BtnLDown" typeDef="TVexJoysticks">BtnLDown</Parameter>
-        <Parameter name="armSpeed" type="short" default="75">45</Parameter>
-    </Parameters>
-</ProgrammingBlock>
-
-<ProgrammingBlock type="functionCall" function="armControl">
-    <Parameters>
-        <Parameter name="armMotorPort" type="base typedef" default="motor10" typeDef="tMotor">clawMotor</Parameter>
-        <Parameter name="upButton" type="base typedef" default="BtnLUp" typeDef="TVexJoysticks">BtnEUp</Parameter>
-        <Parameter name="downButton" type="base typedef" default="BtnLDown" typeDef="TVexJoysticks">BtnEDown</Parameter>
-        <Parameter name="armSpeed" type="short" default="75">50</Parameter>
-    </Parameters>
-</ProgrammingBlock>
-
-<ProgrammingBlock type="loop" loopType="IfThen">
-    <Parameters>
-        <Parameter name="LHS" type="typedef">getJoystickValue(BtnRUp)</Parameter>
-        <Parameter name="operator" type="typedef">==</Parameter>
-        <Parameter name="RHS" type="float">1</Parameter>
-    </Parameters>
-</ProgrammingBlock>
-
-<ProgrammingBlock type="functionCall" function="moveMotor">
-    <Parameters>
-        <Parameter name="motorPort" type="base typedef" default="motor10" typeDef="tMotor">armMotor</Parameter>
-        <Parameter name="quantity" type="float" default="1">450</Parameter>
-        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">degrees</Parameter>
-        <Parameter name="speed" type="short" default="50">50</Parameter>
-    </Parameters>
-</ProgrammingBlock>
-
-<ProgrammingBlock type="functionCall" function="moveMotor">
-    <Parameters>
-        <Parameter name="motorPort" type="base typedef" default="motor10" typeDef="tMotor">clawMotor</Parameter>
-        <Parameter name="quantity" type="float" default="1">120</Parameter>
-        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">degrees</Parameter>
-        <Parameter name="speed" type="short" default="50">-50</Parameter>
-    </Parameters>
-</ProgrammingBlock>
-
-<ProgrammingBlock type="functionCall" function="moveMotor">
-    <Parameters>
-        <Parameter name="motorPort" type="base typedef" default="motor10" typeDef="tMotor">clawMotor</Parameter>
-        <Parameter name="quantity" type="float" default="1">120</Parameter>
-        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">degrees</Parameter>
-        <Parameter name="speed" type="short" default="50">50</Parameter>
-    </Parameters>
-</ProgrammingBlock>
-
-<ProgrammingBlock type="functionCall" function="moveMotor">
-    <Parameters>
-        <Parameter name="motorPort" type="base typedef" default="motor10" typeDef="tMotor">armMotor</Parameter>
-        <Parameter name="quantity" type="float" default="1">450</Parameter>
-        <Parameter name="unitType" type="base typedef" default="rotations" typeDef="tMovementUnits">degrees</Parameter>
-        <Parameter name="speed" type="short" default="50">-50</Parameter>
-    </Parameters>
-</ProgrammingBlock>
-
-<ProgrammingBlock type="else"/>
-
-<ProgrammingBlock type="functionCall" function="stopMultipleMotors">
-    <Parameters>
-        <Parameter name="firstMotor" type="base typedef" default="motor1" typeDef="tMotor">armMotor</Parameter>
-        <Parameter name="secondMotor" type="base typedef" default="noMotor" typeDef="tMotor">clawMotor</Parameter>
-        <Parameter name="thirdMotor" type="base typedef" default="noMotor" typeDef="tMotor">noMotor</Parameter>
-        <Parameter name="fourthMotor" type="base typedef" default="noMotor" typeDef="tMotor">noMotor</Parameter>
+        <Parameter name="armMotorPort" type="base typedef" default="motor10" typeDef="tMotor">clawmotor</Parameter>
+        <Parameter name="upButton" type="base typedef" default="BtnLUp" typeDef="TVexJoysticks">BtnRUp</Parameter>
+        <Parameter name="downButton" type="base typedef" default="BtnLDown" typeDef="TVexJoysticks">BtnRDown</Parameter>
+        <Parameter name="armSpeed" type="short" default="75">70</Parameter>
     </Parameters>
 </ProgrammingBlock>
 
 <ProgrammingBlock type="end"/>
 
-<ProgrammingBlock type="end"/>
-
-<RobotConfiguration>#pragma config(Motor,  motor7,          leftMotor,     tmotorVexIQ, PIDControl, reversed, driveLeft, encoder)
-#pragma config(Motor,  motor10,         clawMotor,     tmotorVexIQ, PIDControl, encoder)
-#pragma config(Motor,  motor11,         armMotor,      tmotorVexIQ, PIDControl, encoder)
-#pragma config(Motor,  motor12,         rightMotor,    tmotorVexIQ, PIDControl, driveRight, encoder)
+<RobotConfiguration>#pragma config(Motor,  motor1,          clawmotor,     tmotorVexIQ, PIDControl, encoder)
+#pragma config(Motor,  motor7,          rightmotor,    tmotorVexIQ, PIDControl, driveRight, encoder)
+#pragma config(Motor,  motor12,         leftmotor,     tmotorVexIQ, PIDControl, driveLeft, encoder)
 //*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
 </RobotConfiguration>
 
-<CSource>#pragma config(Motor,  motor7,          leftMotor,     tmotorVexIQ, PIDControl, reversed, driveLeft, encoder)
-#pragma config(Motor,  motor10,         clawMotor,     tmotorVexIQ, PIDControl, encoder)
-#pragma config(Motor,  motor11,         armMotor,      tmotorVexIQ, PIDControl, encoder)
-#pragma config(Motor,  motor12,         rightMotor,    tmotorVexIQ, PIDControl, driveRight, encoder)
+<CSource>#pragma config(Motor,  motor1,          clawmotor,     tmotorVexIQ, PIDControl, encoder)
+#pragma config(Motor,  motor7,          rightmotor,    tmotorVexIQ, PIDControl, driveRight, encoder)
+#pragma config(Motor,  motor12,         leftmotor,     tmotorVexIQ, PIDControl, driveLeft, encoder)
 //*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
 
 
@@ -105,16 +37,7 @@ task main()
 {
 	repeat (forever) {
 		tankControl(ChD, ChA, 60);
-		armControl(armMotor, BtnLUp, BtnLDown, 45);
-		armControl(clawMotor, BtnEUp, BtnEDown, 50);
-		if (getJoystickValue(BtnRUp) == 1) {
-			moveMotor(armMotor, 450, degrees, 50);
-			moveMotor(clawMotor, 120, degrees, -50);
-			moveMotor(clawMotor, 120, degrees, 50);
-			moveMotor(armMotor, 450, degrees, -50);
-		} else {
-			stopMultipleMotors(armMotor, clawMotor, noMotor, noMotor);
-		}
+		armControl(clawmotor, BtnRUp, BtnRDown, 70);
 	}
 }
 </CSource>
